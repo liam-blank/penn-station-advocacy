@@ -1,0 +1,36 @@
+graph TD
+    subgraph "Terminal Operation (Current Penn Station)"
+        A1[Train from NJ] --> B1[Penn Station Platform]
+        B1 --> C1[Train Reverses Direction]
+        C1 --> D1[Train Returns to NJ]
+        
+        A2[Train from LI] --> B2[Penn Station Platform]
+        B2 --> C2[Train Reverses Direction]
+        C2 --> D2[Train Returns to LI]
+        
+        E1[Limited Platform Capacity]
+        F1[Long Dwell Times]
+        G1[Complex Movements]
+    end
+    
+    subgraph "Through-Running Operation (Proposed)"
+        A3[Train from NJ] --> B3[Penn Station Platform]
+        B3 --> C3[Train Continues Through]
+        C3 --> D3[Train to LI/Queens]
+        
+        A4[Train from LI] --> B4[Penn Station Platform]
+        B4 --> C4[Train Continues Through]
+        C4 --> D4[Train to NJ]
+        
+        E2[Doubled Capacity]
+        F2[Reduced Dwell Times]
+        G2[Simplified Operations]
+    end
+    
+    style A1 fill:#ff6b6b
+    style A2 fill:#ff6b6b
+    style A3 fill:#4ecdc4
+    style A4 fill:#4ecdc4
+    style E2 fill:#45b7d1
+    style F2 fill:#45b7d1
+    style G2 fill:#45b7d1
