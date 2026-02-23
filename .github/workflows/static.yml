@@ -13,20 +13,21 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        cache: 'npm'
-        
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: latest
+        cache: 'pnpm'
+        cache-dependency-path: penn-station-advocacy/pnpm-lock.yaml
         
     - name: Install dependencies
-      run: cd penn-station-advocacy && pnpm install
+      run: cd penn-station-advocacy && pnpm install --frozen-lockfile
       
     - name: Build
       run: cd penn-station-advocacy && pnpm run build
